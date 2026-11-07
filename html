@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOT CONTROL | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>👑 BOT CONTROL</h2>
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#connections">Connections</a>
+        <a href="#messages">Messages</a>
+        <a href="#settings">Settings</a>
+    </nav>
+    <p class="admin">ADMIN PANEL</p>
+</div>
+
+<main class="main-content" id="dashboard">
+
+    <header>
+        <div>
+            <h1>Bot Dashboard</h1>
+            <p>Manage your WhatsApp and Telegram bots.</p>
+        </div>
+        <span class="admin-badge">ADMIN</span>
+    </header>
+
+    <section class="stats">
+        <div class="stat-card">
+            <h3>Telegram</h3>
+            <p id="telegramStatus">Checking...</p>
+            <button onclick="controlBot('telegram')">Start / Stop</button>
+        </div>
+
+        <div class="stat-card">
+            <h3>WhatsApp</h3>
+            <p id="whatsappStatus">Checking...</p>
+            <button onclick="controlBot('whatsapp')">Enable / Pause</button>
+        </div>
+
+        <div class="stat-card">
+            <h3>Messages Received</h3>
+            <p id="messageCount">0</p>
+        </div>
+    </section>
+
+    <section class="panel" id="connections">
+        <h2>Bot Connections</h2>
+        <p>Telegram: <span id="telegramConnection">Offline</span></p>
+        <p>WhatsApp: <span id="whatsappConnection">Offline</span></p>
+        <button onclick="refreshDashboard()">Refresh Status</button>
+    </section>
+
+    <section class="panel" id="messages">
+        <h2>Recent Messages</h2>
+        <div id="messageList">
+            <p>No messages received yet.</p>
+        </div>
+    </section>
+
+    <section class="panel" id="settings">
+        <h2>Bot Settings</h2>
+        <p>Both bots use the shared echo response system.</p>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
